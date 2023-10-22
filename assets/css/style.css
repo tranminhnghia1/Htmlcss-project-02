@@ -1,82 +1,103 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 :root {
     --primary-color: #0f1b4c;
+    --font-family: Sen, sans-serif;
+    
 }
-html, body{
-    scroll-behavior: smooth; 
+
+
+html,
+body {
+    scroll-behavior: smooth;
     /* để khi nhấn vào mọt menu trên header thì trượt xuống phần đó một cách mượt mà  */
 }
-html{
+
+html {
     font-size: 62.5%;
 }
-body{
+
+body {
     font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
 }
+
 /* common  */
-a{
+a {
     text-decoration: none;
 }
-.content{
+
+.content {
     width: 1170px;
-    max-width: calc(100%-48px);  /* để khi màn hình nhỏ nó ko tràn ra  */
-    margin-left: auto;  /* căn giữa  */
-    margin-right: auto; /* căn giữa  */
-    
+    max-width: calc(100%-48px);
+    /* để khi màn hình nhỏ nó ko tràn ra  */
+    margin-left: auto;
+    /* căn giữa  */
+    margin-right: auto;
+    /* căn giữa  */
+
 }
-.btn{
-    display: inline-block; /* dùng thẻ a nên để thế này mới dùng đc padding margin */
+
+.btn {
+    display: inline-block;
+    /* dùng thẻ a nên để thế này mới dùng đc padding margin */
     min-width: 118px;
     text-align: center;
     /* height: 50px; */
     line-height: 50px;
-    border-radius: 25px;
+    border-radius: 9999px;
     background-color: #171100;
     padding: 0px 16px;
     color: #FFF;
 }
 
-/* header  */
-.header{
+/*================= header =========== */
+.header {
     background-color: #FFFCF4;
     /* height: 50px; */
-    
-}
-.header.fixed{
-    position: sticky;
-    top: -28px;
-    /* z-index: 1; */
+
 }
 
-.header .body{
+.header.fixed {
+    position: sticky;
+    top: -28px;
+    z-index: 1;
+}
+
+.header .body {
     display: flex;
     align-items: center;
     padding: 36px 0 8px;
 }
-.header .logo{
 
-}
-.header .nav{
+.header .logo {}
+
+.header .nav {
     margin-left: auto;
 }
-.header .nav ul{
+
+.header .nav ul {
     display: flex;
 }
-.header .nav ul a{
+
+.header .nav ul a {
     color: #5F5B53;
     font-size: 1.6rem;
     padding: 8px 21px;
     position: relative;
 }
 
-.nav a:hover, .nav li.active a{
+.nav a:hover,
+.nav li.active a {
     /* font-weight: 600; */
-    text-shadow: 1px 0 0 currentColor; /* khi hover vào thì ko bị giật nội dung xung quang như weight */
+    text-shadow: 1px 0 0 currentColor;
+    /* khi hover vào thì ko bị giật nội dung xung quang như weight */
     color: #171100;
 }
-.nav li.active a::after{
+
+.nav li.active a::after {
     content: "";
     display: block;
     width: 12px;
@@ -87,9 +108,167 @@ a{
     left: 21px;
     bottom: 6px;
 }
-.header .sign-up-btn{
+
+.header .sign-up-btn {
     min-width: 144px;
 }
-.header .action{
+
+.header .action {
     margin-left: 49px;
+}
+
+/*==================== hero ================== */
+.hero {
+    background-color: #FFFCF4;
+    padding: 56px 0 65px;
+}
+
+.hero .body {
+    display: flex;
+}
+
+.hero .media-block {
+    width: 48%;
+    position: relative;
+}
+
+.hero .media-block .img {
+    display: flex;
+    width: 470px;
+    height: 685px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.hero .hero-sumary {
+    position: absolute;
+    bottom: 48px;
+    right: 0;
+    background-color: #FFFFFF;
+    width: 270px;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.05);
+}
+
+.hero .hero-sumary .item {
+    
+    display: flex;
+}
+.hero .hero-sumary .item + .item{
+    margin-top: 22px;
+    display: flex;
+}
+
+.hero .hero-sumary .item .icon {
+    border-radius: 50%;
+    background-color: #FFF9E8;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.hero .hero-sumary .item:nth-of-type(2) .icon{
+    background-color: #FCEFFF;
+}
+.hero .hero-sumary .item.item:nth-of-type(3) .icon{
+    background-color: #EBEAFF;
+}
+.hero .hero-sumary .item .icon img {
+
+    width: 24px;
+
+}
+
+.hero .hero-sumary .info .lable {
+    color: #5F5B53;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+
+.hero .hero-sumary .info .title {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #171100;
+}
+
+
+/* heero right  */
+.hero .content-block{
+    width: 52%;
+    padding: 64px 0 0 130px;
+}
+
+.hero .heading{
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 5.8rem;
+    line-height: 1.17;
+    color: #171100;
+    letter-spacing: -0.02em;
+    width: 470px;
+}
+
+.hero .desc {
+    margin-top: 22px;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #5f5b53;
+}
+
+.hero .cta-group {
+    display: flex;
+    align-items: center;
+    margin: 38px 0 48px;
+}
+
+.hero-cta {
+    min-width: 180px;
+    line-height: 64px;
+    background-color:  #FFB900;
+}
+
+.hero .watch-video {
+    display: flex;
+    align-items: center;
+    margin-left: 28px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hero .watch-video .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.07);
+}
+
+.hero .watch-video span {
+    margin-left: 14px;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #171100;
+}
+
+.hero .stats {
+    margin: 8px 0 0 -28px;
+}
+
+.hero .stats strong {
+    padding: 0 8px 0 28px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 4.4rem;
+    line-height: 1.23;
+    color: #171100;
 }
